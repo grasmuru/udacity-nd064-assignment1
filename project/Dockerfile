@@ -8,8 +8,8 @@ RUN pip install -r project/techtrends/requirements.txt
 
 EXPOSE 3111
 
-RUN python init_db.py
+RUN python project/techtrends/init_db.py
 
-CMD ["python", "app.py"]
+CMD ["python", "project/techtrends/app.py"]
 
 
