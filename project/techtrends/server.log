@@ -1,0 +1,67 @@
+2022-12-19 16:31:06,194 werkzeug    : INFO  * Running on http://0.0.0.0:3111/ (Press CTRL+C to quit)
+2022-12-19 16:31:11,689 root        : DEBUG About us page retrieved
+2022-12-19 16:31:11,701 werkzeug    : INFO 127.0.0.1 - - [19/Dec/2022 16:31:11] "[37mGET /about HTTP/1.1[0m" 200 -
+2022-12-19 16:35:29,705 werkzeug    : INFO  * Running on http://0.0.0.0:3111/ (Press CTRL+C to quit)
+2022-12-19 16:35:37,160 root        : DEBUG About us page retrieved
+2022-12-19 16:35:37,171 werkzeug    : INFO 127.0.0.1 - - [19/Dec/2022 16:35:37] "[37mGET /about HTTP/1.1[0m" 200 -
+2022-12-19 16:36:16,717 werkzeug    : INFO 127.0.0.1 - - [19/Dec/2022 16:36:16] "[37mGET / HTTP/1.1[0m" 200 -
+2022-12-19 16:36:18,030 app         : ERROR Exception on /1 [GET]
+Traceback (most recent call last):
+  File "C:\Users\RudiG\Anaconda3\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\RudiG\Anaconda3\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\RudiG\Anaconda3\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\RudiG\Anaconda3\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\RudiG\Anaconda3\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\RudiG\Anaconda3\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 50, in post
+    logger.debug('Article returned '+post)
+TypeError: can only concatenate str (not "sqlite3.Row") to str
+2022-12-19 16:36:18,033 werkzeug    : INFO 127.0.0.1 - - [19/Dec/2022 16:36:18] "[35m[1mGET /1 HTTP/1.1[0m" 500 -
+2022-12-19 16:38:24,881 werkzeug    : INFO  * Running on http://0.0.0.0:3111/ (Press CTRL+C to quit)
+2022-12-19 16:38:32,502 root        : DEBUG Article returned 2020 CNCF Annual Report
+2022-12-19 16:38:32,511 werkzeug    : INFO 127.0.0.1 - - [19/Dec/2022 16:38:32] "[37mGET /1 HTTP/1.1[0m" 200 -
+2022-12-19 16:38:42,622 werkzeug    : INFO 127.0.0.1 - - [19/Dec/2022 16:38:42] "[37mGET /create HTTP/1.1[0m" 200 -
+2022-12-19 16:38:50,554 app         : ERROR Exception on /create [POST]
+Traceback (most recent call last):
+  File "C:\Users\RudiG\Anaconda3\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\RudiG\Anaconda3\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\RudiG\Anaconda3\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\RudiG\Anaconda3\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\RudiG\Anaconda3\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\RudiG\Anaconda3\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 66, in create
+    if not title:
+NameError: name 'title' is not defined
+2022-12-19 16:38:50,556 werkzeug    : INFO 127.0.0.1 - - [19/Dec/2022 16:38:50] "[35m[1mPOST /create HTTP/1.1[0m" 500 -
+2022-12-19 16:39:35,854 werkzeug    : INFO  * Running on http://0.0.0.0:3111/ (Press CTRL+C to quit)
+2022-12-19 16:39:45,044 root        : DEBUG Created an article called Test
+2022-12-19 16:39:45,045 werkzeug    : INFO 127.0.0.1 - - [19/Dec/2022 16:39:45] "[32mPOST /create HTTP/1.1[0m" 302 -
+2022-12-19 16:39:45,057 werkzeug    : INFO 127.0.0.1 - - [19/Dec/2022 16:39:45] "[37mGET / HTTP/1.1[0m" 200 -
+2022-12-19 16:39:47,205 werkzeug    : INFO 127.0.0.1 - - [19/Dec/2022 16:39:47] "[37mGET /create HTTP/1.1[0m" 200 -
+2022-12-19 16:39:57,694 root        : DEBUG Created an article called test
+2022-12-19 16:39:57,695 werkzeug    : INFO 127.0.0.1 - - [19/Dec/2022 16:39:57] "[32mPOST /create HTTP/1.1[0m" 302 -
+2022-12-19 16:39:58,009 werkzeug    : INFO 127.0.0.1 - - [19/Dec/2022 16:39:58] "[37mGET / HTTP/1.1[0m" 200 -
+2022-12-19 16:40:03,342 root        : DEBUG Article returned test
+2022-12-19 16:40:03,352 werkzeug    : INFO 127.0.0.1 - - [19/Dec/2022 16:40:03] "[37mGET /8 HTTP/1.1[0m" 200 -
+2022-12-20 12:54:33,489 werkzeug    : INFO  * Running on http://0.0.0.0:3111/ (Press CTRL+C to quit)
+2022-12-20 15:52:25,555 werkzeug    : WARNING  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2022-12-20 15:52:25,557 werkzeug    : INFO  * Running on http://196.35.119.52:3111/ (Press CTRL+C to quit)
+2022-12-20 15:55:37,281 werkzeug    : WARNING  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2022-12-20 15:55:37,283 werkzeug    : INFO  * Running on http://196.35.119.52:3111/ (Press CTRL+C to quit)
+2022-12-20 15:59:28,831 werkzeug    : WARNING  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2022-12-20 15:59:28,833 werkzeug    : INFO  * Running on http://196.35.119.52:3111/ (Press CTRL+C to quit)
