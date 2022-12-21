@@ -4,11 +4,11 @@ WORKDIR /techtrends
 
 ADD . .
 
-RUN pip install -r techtrends/requirements.txt
+RUN pip install -r requirements.txt
 
 EXPOSE 3111
 
-RUN python techtrends/init_db.py
+RUN python init_db.py
 
-CMD ["python", "techtrends/app.py"]
+CMD ["python", "app.py"]
 
