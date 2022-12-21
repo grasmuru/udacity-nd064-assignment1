@@ -27,3 +27,18 @@ spec:
       - image: techtrends:latest
         imagePullPolicy: IfNotPresent
         name: techtrends
+      resources:
+        requests:
+          cpu: 250m
+          memory: 64Mi
+        limits:
+          cpu: 500m
+          memory: 128Mi  
+      livenessProbe:
+        httpGet:
+          path: /healthz
+          port: 3111
+      readinessProbe:
+        httpGet:
+          path: /healthz
+          port: 3111    
