@@ -32,18 +32,18 @@ spec:
           protocol: TCP  
         livenessProbe:
           httpGet:
-            path: {{ .Values.livenessProbe:path }}
+            path: {{ .Values.livenessProbe.path }}
             port: {{ .Values.containerPort }}
         readinessProbe:
           httpGet:
-            path: {{ .Values.readinessProbe:path }}
+            path: {{ .Values.readinessProbe.path }}
             port: {{ .Values.containerPort }}
         resources:
           requests:
-            memory: {{ .Values.resources:requests:memory }}
+            memory: {{ .Values.resources:requests.memory }}
             cpu: "{{ .Values.resources:requests:CPU }}
           limits:
-            memory: {{ .Values.resources:limits:memory }}
+            memory: {{ .Values.resources:limits.memory }}
             cpu: "{{ .Values.resources:limits:CPU }}
             
           
