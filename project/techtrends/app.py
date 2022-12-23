@@ -21,8 +21,6 @@ def get_post(post_id):
     post = connection.execute('SELECT * FROM posts WHERE id = ?',
                         (post_id,)).fetchone()
     connection.close()
-    global x
-    x=x-1
     return post
 
 # Define the Flask application
@@ -35,8 +33,6 @@ def index():
     connection = get_db_connection()
     posts = connection.execute('SELECT * FROM posts').fetchall()
     connection.close()
-    global x
-    x=x-1
     return render_template('index.html', posts=posts)
 
 # Define how each individual article is rendered 
@@ -90,8 +86,6 @@ def metrics():
     connection = get_db_connection()
     posts = len(connection.execute('SELECT * FROM posts').fetchall())
     connection.close()
-    global x
-    x=x-1
     data = {}
     data['post_count'] = posts
     data['db_connection_count'] = x
